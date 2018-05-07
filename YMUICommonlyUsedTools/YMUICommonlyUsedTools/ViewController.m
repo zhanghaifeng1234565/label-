@@ -143,7 +143,7 @@ static CGFloat font = 22;
 {
     if (_testLabel==nil) {
         _testLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 15, MainScreenWidth-30, 17)];
-        _testLabel.text = @"就索拉卡计费拉嘉陵江法兰克阿里客服afjssjflj, 设计费垃圾埃里克计费索拉卡计费历史记录方式家乐福就索拉卡计费拉嘉陵江法兰克阿里客服afjssjflj";
+        _testLabel.text = @"费拉嘉陵江法兰克阿里客服afjssjflj";
         _testLabel.backgroundColor = [UIColor magentaColor];
     }
     return _testLabel;
