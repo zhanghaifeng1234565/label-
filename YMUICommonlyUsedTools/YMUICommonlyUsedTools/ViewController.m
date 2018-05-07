@@ -70,7 +70,6 @@ static CGFloat font = 22;
     
     // 添加带有占位文字和行间距的输入框
     [self.scrollView addSubview:self.textView];
-    [YMUICommonUsedTools configPropertyWithTextView:self.textView textFont:15 textColor:[UIColor blackColor] lineSpace:5.0f textPlaceHolder:@"我是 textView" textPlaceHolderFont:15 textPlaceHolderTextColor:[UIColor grayColor] textAlignment:NSTextAlignmentLeft];
     [YMUICommonUsedTools configPropertyWithView:self.textView backgroundColor:[UIColor groupTableViewBackgroundColor] cornerRadius:4.0f borderWidth:0.5f borderColor:[UIColor blueColor]];
     
     // 添加带有占位文字的输入框
@@ -156,6 +155,8 @@ static CGFloat font = 22;
         _textView = [[YMUIPlaceholderTextView alloc] initWithFrame:CGRectMake(15, self.testLabel.frame.origin.y+self.testLabel.frame.size.height+20, MainScreenWidth-30, 100)];
         _textView.delegate = self;
         _textView.contentInset = UIEdgeInsetsMake(3, 0, 10, 0);
+        [YMUICommonUsedTools configPropertyWithTextView:self.textView textFont:15 textColor:[UIColor blackColor] lineSpace:5.0f textPlaceHolder:@"我是 textView" textPlaceHolderFont:15 textPlaceHolderTextColor:[UIColor grayColor] textAlignment:NSTextAlignmentLeft];
+        _textView.text = @"就索拉卡计费拉嘉陵江法兰克阿里客服afjssjflj, 设计费垃圾埃里克计费索拉卡计费历史记录方式家乐福就索拉卡计费拉嘉陵江法兰克阿里客服afjssjflj";
     }
     return _textView;
 }

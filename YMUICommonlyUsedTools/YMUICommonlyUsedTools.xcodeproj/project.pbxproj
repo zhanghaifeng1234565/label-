@@ -149,9 +149,9 @@
 		8185BDC620A0586700E6A360 /* 公共 UI 的处理 */ = {
 			isa = PBXGroup;
 			children = (
+				8185BDC920A0586700E6A360 /* YMUICommonUsedTools.h */,
 				8185BDC720A0586700E6A360 /* YMUICommonUsedTools.m */,
 				8185BDC820A0586700E6A360 /* YMUIPlaceholderTextView.h */,
-				8185BDC920A0586700E6A360 /* YMUICommonUsedTools.h */,
 				8185BDCA20A0586700E6A360 /* YMUIPlaceholderTextView.m */,
 			);
 			path = "公共 UI 的处理";
