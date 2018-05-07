@@ -11,6 +11,18 @@
 
 @interface YMUICommonUsedTools : NSObject
 
+/**********************  公共方法  *************************/
+/**
+ 配置 label 的圆角颜色
+ 
+ @param view 要配置的 view
+ @param backgroundColor  背景颜色
+ @param cornerRadius 圆角大小
+ @param borderWidth 边框宽度
+ @param borderColor 边框颜色
+ */
++ (void)configPropertyWithView:(UIView *)view backgroundColor:(UIColor *)backgroundColor cornerRadius:(CGFloat)cornerRadius borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
+
 /**********************  label 相关  *************************/
 /**
  配置 label 的属性
@@ -21,17 +33,6 @@
  @param textAlignment 文字对齐方式
  */
 + (void)configPropertyWithLabel:(UILabel *)label font:(CGFloat)font textColor:(UIColor *)color textAlignment:(NSTextAlignment)textAlignment numberOfLine:(CGFloat)numberOfLine;
-
-/**
- 配置 label 的圆角颜色
-
- @param view 要配置的 view
- @param backgroundColor  背景颜色
- @param cornerRadius 圆角大小
- @param borderWidth 边框宽度
- @param borderColor 边框颜色
- */
-+ (void)configPropertyWithView:(UIView *)view backgroundColor:(UIColor *)backgroundColor cornerRadius:(CGFloat)cornerRadius borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
 
 /**
  配置 label 的行间距
