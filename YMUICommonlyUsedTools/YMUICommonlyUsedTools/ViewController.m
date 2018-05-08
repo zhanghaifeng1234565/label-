@@ -7,14 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "YMUICommonUsedTools.h"
-#import "YMUIPlaceholderTextView.h"
-#import "UIScrollView+UITouch.h"
-#import "YMUIConstumButton.h"
 
-#define MainScreenWidth [UIScreen mainScreen].bounds.size.width
-#define MainScreenHeight [UIScreen mainScreen].bounds.size.height
-#define NavBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20?88:64)
 static CGFloat font = 22;
 
 @interface ViewController ()<UITextFieldDelegate, UITextViewDelegate>
