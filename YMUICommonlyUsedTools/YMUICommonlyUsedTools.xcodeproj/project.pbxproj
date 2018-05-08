@@ -165,8 +165,8 @@
 		8185BDCD20A0587000E6A360 /* UIScrollView+UITouch */ = {
 			isa = PBXGroup;
 			children = (
-				8185BDCE20A0587000E6A360 /* UIScrollView+UITouch.m */,
 				8185BDCF20A0587000E6A360 /* UIScrollView+UITouch.h */,
+				8185BDCE20A0587000E6A360 /* UIScrollView+UITouch.m */,
 			);
 			path = "UIScrollView+UITouch";
 			sourceTree = "<group>";

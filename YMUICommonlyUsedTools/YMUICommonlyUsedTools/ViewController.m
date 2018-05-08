@@ -55,12 +55,33 @@ static CGFloat font = 22;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    // 添加视图
+    [self addSubViews];
+    // 配置属性
+    [self configProperty];
+    // 布局视图
+    [self layoutSubView];
+}
+#pragma mark -- 添加视图
+- (void)addSubViews
+{
     // 添加背景滚动视图
     [self.view addSubview:self.scrollView];
-    
     // 添加设置行间距的 label
     [self.scrollView addSubview:self.testLabel];
+    // 添加带有占位文字和行间距的输入框
+    [self.scrollView addSubview:self.textView];
+    // 添加带有占位文字的输入框
+    [self.scrollView addSubview:self.textFiled];
+    // 自定义按钮
+    [self.scrollView addSubview:self.button];
+    // 自定义V按钮
+    [self.scrollView addSubview:self.vButton];
+}
+#pragma mark -- 配置属性
+- (void)configProperty
+{
+    // 添加设置行间距的 label
     [YMUICommonUsedTools configPropertyWithLabel:self.testLabel font:font textColor:[UIColor blueColor] textAlignment:NSTextAlignmentLeft numberOfLine:0];
     [YMUICommonUsedTools configPropertyWithLabel:self.testLabel font:font lineSpace:5 maxWidth:MainScreenWidth-30];
     CGFloat labelHeight = [YMUICommonUsedTools getHeightWithLabel:self.testLabel font:font lineSpace:5 maxWidth:MainScreenWidth-30];
@@ -74,28 +95,27 @@ static CGFloat font = 22;
     [YMUICommonUsedTools configPropertyWithView:self.testLabel backgroundColor:[UIColor yellowColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor greenColor]];
     
     // 添加带有占位文字和行间距的输入框
-    [self.scrollView addSubview:self.textView];
     [YMUICommonUsedTools configPropertyWithView:self.textView backgroundColor:[UIColor groupTableViewBackgroundColor] cornerRadius:4.0f borderWidth:0.5f borderColor:[UIColor blueColor]];
     
     // 添加带有占位文字的输入框
-    [self.scrollView addSubview:self.textFiled];
     [YMUICommonUsedTools configPropertyWithTextField:self.textFiled textFont:18 textColor:[UIColor blackColor] textPlaceHolder:@"我是占位 textFiled" textPlaceHolderFont:18 textPlaceHolderTextColor:[UIColor blueColor] textAlignment:NSTextAlignmentCenter];
     [YMUICommonUsedTools configPropertyWithView:self.textFiled backgroundColor:[UIColor groupTableViewBackgroundColor] cornerRadius:4.0f borderWidth:0.5f borderColor:[UIColor blueColor]];
     
     // 自定义按钮
-    [self.scrollView addSubview:self.button];
     self.button.CBTitleLabel.text = @"我是按钮";
     [YMUICommonUsedTools configPropertyWithLabel:self.button.CBTitleLabel font:17 textColor:[UIColor greenColor] textAlignment:NSTextAlignmentCenter numberOfLine:1];
     [YMUICommonUsedTools configPropertyWithView:self.button.CBImageView backgroundColor:[UIColor magentaColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
     [YMUICommonUsedTools configPropertyWithView:self.button backgroundColor:[UIColor redColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
     
     // 自定义V按钮
-    [self.scrollView addSubview:self.vButton];
     self.vButton.CBTitleLabel.text = @"我是V按钮";
     [YMUICommonUsedTools configPropertyWithLabel:self.vButton.CBTitleLabel font:17 textColor:[UIColor greenColor] textAlignment:NSTextAlignmentCenter numberOfLine:1];
     [YMUICommonUsedTools configPropertyWithView:self.vButton.CBImageView backgroundColor:[UIColor magentaColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
     [YMUICommonUsedTools configPropertyWithView:self.vButton backgroundColor:[UIColor redColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
-    
+}
+#pragma mark -- 布局视图
+- (void)layoutSubView
+{
     self.scrollView.contentSize = CGSizeMake(MainScreenWidth, self.vButton.frame.origin.y+self.vButton.frame.size.height+30);
 }
 #pragma mark -- textFiledDelegate

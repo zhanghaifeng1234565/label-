@@ -9,7 +9,9 @@
 #import "UIScrollView+UITouch.h"
 
 @implementation UIScrollView (UITouch)
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
     if (![self isMemberOfClass:[UIScrollView class]]) {
         
     } else {
@@ -18,9 +20,10 @@
             [super touchesBegan:touches withEvent:event];
         }
     }
-    
 }
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
     if (![self isMemberOfClass:[UIScrollView class]]) {
         
     } else {
@@ -29,10 +32,10 @@
             [super touchesMoved:touches withEvent:event];
         }
     }
-    
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
     if (![self isMemberOfClass:[UIScrollView class]]) {
         
     } else {
