@@ -10,6 +10,7 @@
 #import "YMUICommonUsedTools.h"
 #import "YMUIPlaceholderTextView.h"
 #import "UIScrollView+UITouch.h"
+#import "YMUIConstumButton.h"
 
 #define MainScreenWidth [UIScreen mainScreen].bounds.size.width
 #define MainScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -26,6 +27,10 @@ static CGFloat font = 22;
 @property (nonatomic, strong) YMUIPlaceholderTextView *textView;
 /** 带有占位文字的输入框 */
 @property (nonatomic, strong) UITextField *textFiled;
+/** 按钮 水平【左右】*/
+@property (nonatomic, strong) YMUIConstumButton *button;
+/** 按钮 垂直【上下】 */
+@property (nonatomic, strong) YMUIConstumButton *vButton;
 
 @end
 
@@ -77,7 +82,21 @@ static CGFloat font = 22;
     [YMUICommonUsedTools configPropertyWithTextField:self.textFiled textFont:18 textColor:[UIColor blackColor] textPlaceHolder:@"我是占位 textFiled" textPlaceHolderFont:18 textPlaceHolderTextColor:[UIColor blueColor] textAlignment:NSTextAlignmentCenter];
     [YMUICommonUsedTools configPropertyWithView:self.textFiled backgroundColor:[UIColor groupTableViewBackgroundColor] cornerRadius:4.0f borderWidth:0.5f borderColor:[UIColor blueColor]];
     
-    self.scrollView.contentSize = CGSizeMake(MainScreenWidth, self.textFiled.frame.origin.y+self.textFiled.frame.size.height+30);
+    // 自定义按钮
+    [self.scrollView addSubview:self.button];
+    self.button.CBTitleLabel.text = @"我是按钮";
+    [YMUICommonUsedTools configPropertyWithLabel:self.button.CBTitleLabel font:17 textColor:[UIColor greenColor] textAlignment:NSTextAlignmentCenter numberOfLine:1];
+    [YMUICommonUsedTools configPropertyWithView:self.button.CBImageView backgroundColor:[UIColor magentaColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
+    [YMUICommonUsedTools configPropertyWithView:self.button backgroundColor:[UIColor redColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
+    
+    // 自定义V按钮
+    [self.scrollView addSubview:self.vButton];
+    self.vButton.CBTitleLabel.text = @"我是V按钮";
+    [YMUICommonUsedTools configPropertyWithLabel:self.vButton.CBTitleLabel font:17 textColor:[UIColor greenColor] textAlignment:NSTextAlignmentCenter numberOfLine:1];
+    [YMUICommonUsedTools configPropertyWithView:self.vButton.CBImageView backgroundColor:[UIColor magentaColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
+    [YMUICommonUsedTools configPropertyWithView:self.vButton backgroundColor:[UIColor redColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
+    
+    self.scrollView.contentSize = CGSizeMake(MainScreenWidth, self.vButton.frame.origin.y+self.vButton.frame.size.height+30);
 }
 #pragma mark -- textFiledDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -130,6 +149,27 @@ static CGFloat font = 22;
         textView.text = [textView.text substringToIndex:100];
     }
 }
+#pragma mark - KeyBoard Notification
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    NSDictionary *info = [notification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+    CGRect rect = self.scrollView.frame;
+    rect.size.height = MainScreenHeight-kbSize.height;
+    self.scrollView.frame = rect;
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+    CGRect rect = self.scrollView.frame;
+    rect.size.height = MainScreenHeight-NavBarHeight;
+    self.scrollView.frame = rect;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.scrollView endEditing:YES];
+}
 #pragma mark -- getter
 - (UIScrollView *)scrollView
 {
@@ -171,25 +211,20 @@ static CGFloat font = 22;
     }
     return _textFiled;
 }
-#pragma mark - KeyBoard Notification
-- (void)keyboardWillShow:(NSNotification *)notification
+
+- (YMUIConstumButton *)button
 {
-    NSDictionary *info = [notification userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
-    CGRect rect = self.scrollView.frame;
-    rect.size.height = MainScreenHeight-kbSize.height;
-    self.scrollView.frame = rect;
+    if (_button==nil) {
+        _button = [[YMUIConstumButton alloc] initWithFrame:CGRectMake(15, self.textFiled.frame.origin.y+self.textFiled.frame.size.height+20, MainScreenWidth-30, 48) buttonType:YMUIConstumButtonTypeRight];
+    }
+    return _button;
 }
 
-- (void)keyboardWillHide:(NSNotification *)notification
+- (YMUIConstumButton *)vButton
 {
-    CGRect rect = self.scrollView.frame;
-    rect.size.height = MainScreenHeight-NavBarHeight;
-    self.scrollView.frame = rect;
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    [self.scrollView endEditing:YES];
+    if (_vButton==nil) {
+        _vButton = [[YMUIConstumButton alloc] initWithFrame:CGRectMake(15, self.button.frame.origin.y+self.button.frame.size.height+20, 100, 100) buttonType:YMUIConstumButtonTypeTop];
+    }
+    return _vButton;
 }
 @end

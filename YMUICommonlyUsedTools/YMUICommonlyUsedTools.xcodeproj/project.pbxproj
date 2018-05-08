@@ -19,6 +19,7 @@
 		8185BDCB20A0586700E6A360 /* YMUICommonUsedTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8185BDC720A0586700E6A360 /* YMUICommonUsedTools.m */; };
 		8185BDCC20A0586700E6A360 /* YMUIPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8185BDCA20A0586700E6A360 /* YMUIPlaceholderTextView.m */; };
 		8185BDD020A0587000E6A360 /* UIScrollView+UITouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 8185BDCE20A0587000E6A360 /* UIScrollView+UITouch.m */; };
+		81EE78A920A1423E00566322 /* YMUIConstumButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EE78A820A1423E00566322 /* YMUIConstumButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		8185BDCA20A0586700E6A360 /* YMUIPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMUIPlaceholderTextView.m; sourceTree = "<group>"; };
 		8185BDCE20A0587000E6A360 /* UIScrollView+UITouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+UITouch.m"; sourceTree = "<group>"; };
 		8185BDCF20A0587000E6A360 /* UIScrollView+UITouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+UITouch.h"; sourceTree = "<group>"; };
+		81EE78A720A1423E00566322 /* YMUIConstumButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMUIConstumButton.h; sourceTree = "<group>"; };
+		81EE78A820A1423E00566322 /* YMUIConstumButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMUIConstumButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +156,8 @@
 				8185BDC720A0586700E6A360 /* YMUICommonUsedTools.m */,
 				8185BDC820A0586700E6A360 /* YMUIPlaceholderTextView.h */,
 				8185BDCA20A0586700E6A360 /* YMUIPlaceholderTextView.m */,
+				81EE78A720A1423E00566322 /* YMUIConstumButton.h */,
+				81EE78A820A1423E00566322 /* YMUIConstumButton.m */,
 			);
 			path = "公共 UI 的处理";
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				8185BDCC20A0586700E6A360 /* YMUIPlaceholderTextView.m in Sources */,
 				8185BD9E20A025E100E6A360 /* main.m in Sources */,
 				8185BD9620A025E100E6A360 /* YMUICommonlyUsedTools.xcdatamodeld in Sources */,
+				81EE78A920A1423E00566322 /* YMUIConstumButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
