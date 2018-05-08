@@ -21,6 +21,94 @@
     view.layer.borderWidth = borderWidth;
     view.layer.borderColor = borderColor.CGColor;
 }
+#pragma mark -- 配置任意圆角的方法
++ (void)configArbitraryCornerRadiusView:(UIView *)view cornerRadius:(CGFloat)cornerRadius withType:(ArbitraryCornerRadiusViewType)type
+{
+    UIBezierPath *maskPath = [[UIBezierPath alloc] init];
+    switch (type) {
+        case ArbitraryCornerRadiusViewTypeDefault:
+        {
+            maskPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds            byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        }
+            break;
+        case ArbitraryCornerRadiusViewTypeTopLeft:
+        {
+            maskPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds            byRoundingCorners:UIRectCornerTopLeft cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        }
+            break;
+        case ArbitraryCornerRadiusViewTypeTopRight:
+        {
+            maskPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds            byRoundingCorners:UIRectCornerTopRight cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        }
+            break;
+        case ArbitraryCornerRadiusViewTypeBottomLeft:
+        {
+            maskPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds            byRoundingCorners:UIRectCornerBottomLeft cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        }
+            break;
+        case ArbitraryCornerRadiusViewTypeBottomRight:
+        {
+            maskPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds            byRoundingCorners:UIRectCornerBottomRight cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        }
+            break;
+        case ArbitraryCornerRadiusViewTypeTopLeftTopRight:
+        {
+            maskPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds            byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        }
+            break;
+        case ArbitraryCornerRadiusViewTypeTopLeftBottomLeft:
+        {
+            maskPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds            byRoundingCorners:UIRectCornerTopLeft|UIRectCornerBottomLeft cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        }
+            break;
+        case ArbitraryCornerRadiusViewTypeTopLeftBottomRight:
+        {
+            maskPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds            byRoundingCorners:UIRectCornerTopLeft|UIRectCornerBottomRight cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        }
+            break;
+        case ArbitraryCornerRadiusViewTypeTopRightBottomLeft:
+        {
+            maskPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds            byRoundingCorners:UIRectCornerTopRight|UIRectCornerBottomLeft cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        }
+            break;
+        case ArbitraryCornerRadiusViewTypeTopRightBottomRight:
+        {
+            maskPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds            byRoundingCorners:UIRectCornerTopRight|UIRectCornerBottomRight cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        }
+            break;
+        case ArbitraryCornerRadiusViewTypeBottomLeftBottomRight:
+        {
+            maskPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds            byRoundingCorners:UIRectCornerBottomLeft|UIRectCornerBottomRight cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        }
+            break;
+        case ArbitraryCornerRadiusViewTypeTopLeftTopRightBottomLeft:
+        {
+            maskPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds            byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight|UIRectCornerBottomLeft cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        }
+            break;
+        case ArbitraryCornerRadiusViewTypeTopLeftTopRightBottomRight:
+        {
+            maskPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds            byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight|UIRectCornerBottomRight cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        }
+            break;
+        case ArbitraryCornerRadiusViewTypeTopLeftBottomLeftBottomRight:
+        {
+            maskPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds            byRoundingCorners:UIRectCornerTopLeft|UIRectCornerBottomLeft|UIRectCornerBottomRight cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        }
+            break;
+        case ArbitraryCornerRadiusViewTypeTopRightBottomLeftBottomRight:
+        {
+            maskPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds            byRoundingCorners:UIRectCornerTopRight|UIRectCornerBottomLeft|UIRectCornerBottomRight cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        }
+            break;
+        default:
+            break;
+    }
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = view.bounds;
+    maskLayer.path = maskPath.CGPath;
+    view.layer.mask = maskLayer;
+}
 #pragma mark -- label 相关
 #pragma mark -- 配置 label 的属性【字体】【颜色】【对齐方式】【显示行数】
 + (void)configPropertyWithLabel:(UILabel *)label font:(CGFloat)font textColor:(UIColor *)color textAlignment:(NSTextAlignment)textAlignment numberOfLine:(CGFloat)numberOfLine

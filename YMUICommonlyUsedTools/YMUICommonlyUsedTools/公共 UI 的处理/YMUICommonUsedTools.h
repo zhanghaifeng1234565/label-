@@ -9,6 +9,39 @@
 #import <UIKit/UIKit.h>
 @class YMUIPlaceholderTextView;
 
+typedef NS_ENUM(NSInteger, ArbitraryCornerRadiusViewType) {
+    /** 默认全角 */
+    ArbitraryCornerRadiusViewTypeDefault = 0,
+    /** 左上角 */
+    ArbitraryCornerRadiusViewTypeTopLeft = 1,
+    /** 右上角 */
+    ArbitraryCornerRadiusViewTypeTopRight = 2,
+    /** 左下角 */
+    ArbitraryCornerRadiusViewTypeBottomLeft = 3,
+    /** 右下角 */
+    ArbitraryCornerRadiusViewTypeBottomRight = 4,
+    /** 左上角和右上角 */
+    ArbitraryCornerRadiusViewTypeTopLeftTopRight = 5,
+    /** 左上角和左下角 */
+    ArbitraryCornerRadiusViewTypeTopLeftBottomLeft = 6,
+    /** 左上角和右下角 */
+    ArbitraryCornerRadiusViewTypeTopLeftBottomRight = 7,
+    /** 右上角和左下角 */
+    ArbitraryCornerRadiusViewTypeTopRightBottomLeft = 8,
+    /** 右上角和右下角 */
+    ArbitraryCornerRadiusViewTypeTopRightBottomRight = 9,
+    /** 左下角和右下角 */
+    ArbitraryCornerRadiusViewTypeBottomLeftBottomRight = 10,
+    /** 左上角和右上角和左下角 */
+    ArbitraryCornerRadiusViewTypeTopLeftTopRightBottomLeft = 11,
+    /** 左上角和右上角和右下角 */
+    ArbitraryCornerRadiusViewTypeTopLeftTopRightBottomRight = 12,
+    /** 左上角和左下角和右下角 */
+    ArbitraryCornerRadiusViewTypeTopLeftBottomLeftBottomRight = 13,
+    /** 右上角和左下角和右下角 */
+    ArbitraryCornerRadiusViewTypeTopRightBottomLeftBottomRight = 14,
+};
+
 @interface YMUICommonUsedTools : NSObject
 
 /**********************  公共方法  *************************/
@@ -22,6 +55,15 @@
  @param borderColor 边框颜色
  */
 + (void)configPropertyWithView:(UIView *)view backgroundColor:(UIColor *)backgroundColor cornerRadius:(CGFloat)cornerRadius borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
+
+/**
+ 视图切任意方向圆角
+
+ @param view 要切圆角的视图
+ @param cornerRadius 圆角大小
+ @param type 圆角类型
+ */
++ (void)configArbitraryCornerRadiusView:(UIView *)view cornerRadius:(CGFloat)cornerRadius withType:(ArbitraryCornerRadiusViewType)type;
 
 /**********************  label 相关  *************************/
 /**

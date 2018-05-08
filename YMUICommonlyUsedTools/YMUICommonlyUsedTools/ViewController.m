@@ -104,7 +104,8 @@ static CGFloat font = 22;
     self.vButton.CBTitleLabel.text = @"我是V按钮";
     [YMUICommonUsedTools configPropertyWithLabel:self.vButton.CBTitleLabel font:17 textColor:[UIColor greenColor] textAlignment:NSTextAlignmentCenter numberOfLine:1];
     [YMUICommonUsedTools configPropertyWithView:self.vButton.CBImageView backgroundColor:[UIColor magentaColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
-    [YMUICommonUsedTools configPropertyWithView:self.vButton backgroundColor:[UIColor redColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
+    [YMUICommonUsedTools configPropertyWithView:self.vButton backgroundColor:[UIColor redColor] cornerRadius:0.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
+    [YMUICommonUsedTools configArbitraryCornerRadiusView:self.vButton cornerRadius:50.0f withType:ArbitraryCornerRadiusViewTypeTopLeftTopRight];
 }
 #pragma mark -- 布局视图
 - (void)layoutSubView
