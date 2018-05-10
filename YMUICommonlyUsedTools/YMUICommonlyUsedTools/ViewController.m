@@ -112,6 +112,16 @@ static CGFloat font = 22;
 {
     self.scrollView.contentSize = CGSizeMake(MainScreenWidth, self.vButton.frame.origin.y+self.vButton.frame.size.height+30);
 }
+#pragma mark -- button 点击事件
+- (void)buttonClick
+{
+    NSLog(@"button 快速点击......");
+}
+#pragma mark -- vbutton 点击事件
+- (void)vButtonClick
+{
+    NSLog(@"vButton 快速点击......");
+}
 #pragma mark -- textFiledDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
@@ -230,6 +240,8 @@ static CGFloat font = 22;
 {
     if (_button==nil) {
         _button = [[YMUIConstumButton alloc] initWithFrame:CGRectMake(15, self.textFiled.frame.origin.y+self.textFiled.frame.size.height+20, MainScreenWidth-30, 48) buttonType:YMUIConstumButtonTypeRight];
+        _button.acceptEventInterval = 1.0;
+        [_button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _button;
 }
@@ -238,6 +250,8 @@ static CGFloat font = 22;
 {
     if (_vButton==nil) {
         _vButton = [[YMUIConstumButton alloc] initWithFrame:CGRectMake(15, self.button.frame.origin.y+self.button.frame.size.height+20, 100, 100) buttonType:YMUIConstumButtonTypeTop];
+        _vButton.acceptEventInterval = 1.0f;
+        [_vButton addTarget:self action:@selector(vButtonClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _vButton;
 }

@@ -15,5 +15,6 @@
 #import "YMUIConstumButton.h"
 #import "UIViewExt.h"
 #import "UIColor+Hex.h"
+#import "UIControl+ButtonClickLimit.h"
 
 #endif /* YMUIHeader_h */
