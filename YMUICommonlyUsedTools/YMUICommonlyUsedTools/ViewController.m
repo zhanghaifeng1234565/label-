@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "YMPayInoutViewController.h"
 
 static CGFloat font = 22;
 
@@ -48,12 +49,19 @@ static CGFloat font = 22;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // 添加导航数据
+    [self loadNavUIData];
     // 添加视图
     [self addSubViews];
     // 配置属性
     [self configProperty];
     // 布局视图
     [self layoutSubView];
+}
+#pragma mark -- 加载导航数据
+- (void)loadNavUIData
+{
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:self.title style:UIBarButtonItemStylePlain target:self action:nil];
 }
 #pragma mark -- 添加视图
 - (void)addSubViews
@@ -95,7 +103,7 @@ static CGFloat font = 22;
     [YMUICommonUsedTools configPropertyWithView:self.textFiled backgroundColor:[UIColor groupTableViewBackgroundColor] cornerRadius:4.0f borderWidth:0.5f borderColor:[UIColor blueColor]];
     
     // 自定义按钮
-    self.button.CBTitleLabel.text = @"我是按钮";
+    self.button.CBTitleLabel.text = @"点我支付";
     [YMUICommonUsedTools configPropertyWithLabel:self.button.CBTitleLabel font:17 textColor:[UIColor greenColor] textAlignment:NSTextAlignmentCenter numberOfLine:1];
     [YMUICommonUsedTools configPropertyWithView:self.button.CBImageView backgroundColor:[UIColor magentaColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
     [YMUICommonUsedTools configPropertyWithView:self.button backgroundColor:[UIColor redColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
@@ -113,13 +121,21 @@ static CGFloat font = 22;
     self.scrollView.contentSize = CGSizeMake(MainScreenWidth, self.vButton.frame.origin.y+self.vButton.frame.size.height+30);
 }
 #pragma mark -- button 点击事件
-- (void)buttonClick
+- (void)buttonClick:(YMUIConstumButton *)sender
 {
+    [self.scrollView endEditing:YES];
     NSLog(@"button 快速点击......");
+    YMPayInoutViewController *vc = [[YMPayInoutViewController alloc] init];
+    vc.title = @"支付密码";
+    vc.payOnoutViewControllerBlock = ^(NSString *pwdStr) {
+        sender.CBTitleLabel.text = [NSString stringWithFormat:@"支付密码：%@", pwdStr];
+    };
+    [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark -- vbutton 点击事件
 - (void)vButtonClick
 {
+    [self.scrollView endEditing:YES];
     NSLog(@"vButton 快速点击......");
 }
 #pragma mark -- textFiledDelegate
@@ -241,7 +257,7 @@ static CGFloat font = 22;
     if (_button==nil) {
         _button = [[YMUIConstumButton alloc] initWithFrame:CGRectMake(15, self.textFiled.frame.origin.y+self.textFiled.frame.size.height+20, MainScreenWidth-30, 48) buttonType:YMUIConstumButtonTypeRight];
         _button.acceptEventInterval = 1.0;
-        [_button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
+        [_button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _button;
 }

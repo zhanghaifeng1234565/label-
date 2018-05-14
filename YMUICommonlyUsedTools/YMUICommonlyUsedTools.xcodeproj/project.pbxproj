@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8159949A20A52A9D0043084D /* YMPayInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8159949920A52A9D0043084D /* YMPayInputView.m */; };
+		8159949D20A562E70043084D /* YMPayInoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8159949C20A562E70043084D /* YMPayInoutViewController.m */; };
+		815994A720A5B49D0043084D /* YMUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 815994A620A5B49D0043084D /* YMUITextField.m */; };
 		8185BD8D20A025E100E6A360 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8185BD8C20A025E100E6A360 /* AppDelegate.m */; };
 		8185BD9020A025E100E6A360 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8185BD8F20A025E100E6A360 /* ViewController.m */; };
 		8185BD9320A025E100E6A360 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8185BD9120A025E100E6A360 /* Main.storyboard */; };
@@ -43,6 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8159949820A52A9D0043084D /* YMPayInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMPayInputView.h; sourceTree = "<group>"; };
+		8159949920A52A9D0043084D /* YMPayInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMPayInputView.m; sourceTree = "<group>"; };
+		8159949B20A562E70043084D /* YMPayInoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMPayInoutViewController.h; sourceTree = "<group>"; };
+		8159949C20A562E70043084D /* YMPayInoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMPayInoutViewController.m; sourceTree = "<group>"; };
+		815994A520A5B49D0043084D /* YMUITextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMUITextField.h; sourceTree = "<group>"; };
+		815994A620A5B49D0043084D /* YMUITextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMUITextField.m; sourceTree = "<group>"; };
 		8185BD8820A025E100E6A360 /* YMUICommonlyUsedTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YMUICommonlyUsedTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8185BD8B20A025E100E6A360 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8185BD8C20A025E100E6A360 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -103,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8159949720A52A6E0043084D /* 密码输入 */ = {
+			isa = PBXGroup;
+			children = (
+				8159949820A52A9D0043084D /* YMPayInputView.h */,
+				8159949920A52A9D0043084D /* YMPayInputView.m */,
+			);
+			path = "密码输入";
+			sourceTree = "<group>";
+		};
 		8185BD7F20A025E100E6A360 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +148,9 @@
 				8185BD8C20A025E100E6A360 /* AppDelegate.m */,
 				8185BD8E20A025E100E6A360 /* ViewController.h */,
 				8185BD8F20A025E100E6A360 /* ViewController.m */,
+				8159949B20A562E70043084D /* YMPayInoutViewController.h */,
+				8159949C20A562E70043084D /* YMPayInoutViewController.m */,
+				8159949720A52A6E0043084D /* 密码输入 */,
 				81D8D8D320A45F74004C2206 /* 解决按钮时间点击太快短时间多次响应 */,
 				81EE78AE20A1735100566322 /* UIViewExt */,
 				81EE78AA20A1734900566322 /* Color */,
@@ -174,6 +195,8 @@
 				8185BDCA20A0586700E6A360 /* YMUIPlaceholderTextView.m */,
 				81EE78A720A1423E00566322 /* YMUIConstumButton.h */,
 				81EE78A820A1423E00566322 /* YMUIConstumButton.m */,
+				815994A520A5B49D0043084D /* YMUITextField.h */,
+				815994A620A5B49D0043084D /* YMUITextField.m */,
 			);
 			path = "公共 UI 的处理";
 			sourceTree = "<group>";
@@ -350,14 +373,17 @@
 				8185BDD020A0587000E6A360 /* UIScrollView+UITouch.m in Sources */,
 				8185BDCB20A0586700E6A360 /* YMUICommonUsedTools.m in Sources */,
 				81EE78B120A1735200566322 /* UIViewExt.m in Sources */,
+				8159949D20A562E70043084D /* YMPayInoutViewController.m in Sources */,
 				8185BD9020A025E100E6A360 /* ViewController.m in Sources */,
 				8185BD8D20A025E100E6A360 /* AppDelegate.m in Sources */,
 				81EE78AD20A1734A00566322 /* UIColor+Hex.m in Sources */,
+				8159949A20A52A9D0043084D /* YMPayInputView.m in Sources */,
 				8185BDCC20A0586700E6A360 /* YMUIPlaceholderTextView.m in Sources */,
 				81D8D8D620A45FA0004C2206 /* UIControl+ButtonClickLimit.m in Sources */,
 				8185BD9E20A025E100E6A360 /* main.m in Sources */,
 				8185BD9620A025E100E6A360 /* YMUICommonlyUsedTools.xcdatamodeld in Sources */,
 				81EE78A920A1423E00566322 /* YMUIConstumButton.m in Sources */,
+				815994A720A5B49D0043084D /* YMUITextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,7 +547,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5JZQVBBZQ7;
+				DEVELOPMENT_TEAM = KT2L87A63L;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YMUICommonlyUsedTools/YMUIPrefixHeader.pch";
 				INFOPLIST_FILE = YMUICommonlyUsedTools/Info.plist;
@@ -538,7 +564,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5JZQVBBZQ7;
+				DEVELOPMENT_TEAM = KT2L87A63L;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YMUICommonlyUsedTools/YMUIPrefixHeader.pch";
 				INFOPLIST_FILE = YMUICommonlyUsedTools/Info.plist;

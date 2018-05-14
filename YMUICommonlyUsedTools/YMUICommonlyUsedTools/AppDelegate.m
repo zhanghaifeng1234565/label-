@@ -26,7 +26,15 @@
 - (void)loadWindows
 {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+    ViewController *vc = [[ViewController alloc] init];
+    vc.title = @"实用工具";
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [nav.navigationBar setBackgroundImage:[UIImage imageNamed:@"top_navigation_bg_6p"] forBarMetrics:UIBarMetricsDefault];
+    nav.navigationBar.shadowImage = [UIImage new];
+    [nav.navigationBar setBackIndicatorImage:[UIImage imageNamed:@"staff_list_return_arrow"]];
+    [nav.navigationBar setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"staff_list_return_arrow"]];
+    nav.navigationBar.tintColor = [UIColor whiteColor];
+    [nav.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17], NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.window.rootViewController = nav;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
