@@ -17,5 +17,7 @@
 #import "UIColor+Hex.h"
 #import "UIControl+ButtonClickLimit.h"
 #import "YMUITextField.h"
+#import "YYFPSLabel.h"
+#import "BaseViewController.h"
 
 #endif /* YMUIHeader_h */

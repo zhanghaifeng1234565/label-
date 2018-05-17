@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8111DD8720A98BC20032A588 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8111DD8320A98BC10032A588 /* YYWeakProxy.m */; };
+		8111DD8820A98BC20032A588 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8111DD8520A98BC10032A588 /* YYFPSLabel.m */; };
+		8133ADC820AD12CA0063DD36 /* YMWKWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8133ADC720AD12CA0063DD36 /* YMWKWebViewViewController.m */; };
+		8133ADCC20AD187F0063DD36 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8133ADCB20AD187F0063DD36 /* BaseViewController.m */; };
 		8159949A20A52A9D0043084D /* YMPayInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8159949920A52A9D0043084D /* YMPayInputView.m */; };
 		8159949D20A562E70043084D /* YMPayInoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8159949C20A562E70043084D /* YMPayInoutViewController.m */; };
 		815994A720A5B49D0043084D /* YMUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 815994A620A5B49D0043084D /* YMUITextField.m */; };
@@ -46,6 +50,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8111DD8320A98BC10032A588 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
+		8111DD8420A98BC10032A588 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
+		8111DD8520A98BC10032A588 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		8111DD8620A98BC10032A588 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
+		8133ADC620AD12CA0063DD36 /* YMWKWebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMWKWebViewViewController.h; sourceTree = "<group>"; };
+		8133ADC720AD12CA0063DD36 /* YMWKWebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMWKWebViewViewController.m; sourceTree = "<group>"; };
+		8133ADCA20AD187F0063DD36 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		8133ADCB20AD187F0063DD36 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		8159949820A52A9D0043084D /* YMPayInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMPayInputView.h; sourceTree = "<group>"; };
 		8159949920A52A9D0043084D /* YMPayInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMPayInputView.m; sourceTree = "<group>"; };
 		8159949B20A562E70043084D /* YMPayInoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMPayInoutViewController.h; sourceTree = "<group>"; };
@@ -112,6 +124,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8111DD8220A98BC10032A588 /* 屏幕 fps */ = {
+			isa = PBXGroup;
+			children = (
+				8111DD8420A98BC10032A588 /* YYFPSLabel.h */,
+				8111DD8520A98BC10032A588 /* YYFPSLabel.m */,
+				8111DD8620A98BC10032A588 /* YYWeakProxy.h */,
+				8111DD8320A98BC10032A588 /* YYWeakProxy.m */,
+			);
+			path = "屏幕 fps";
+			sourceTree = "<group>";
+		};
+		8133ADC220AD12810063DD36 /* WKWebView 使用 */ = {
+			isa = PBXGroup;
+			children = (
+				8133ADC620AD12CA0063DD36 /* YMWKWebViewViewController.h */,
+				8133ADC720AD12CA0063DD36 /* YMWKWebViewViewController.m */,
+			);
+			path = "WKWebView 使用";
+			sourceTree = "<group>";
+		};
+		8133ADC920AD186F0063DD36 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8133ADCA20AD187F0063DD36 /* BaseViewController.h */,
+				8133ADCB20AD187F0063DD36 /* BaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		8159949720A52A6E0043084D /* 密码输入 */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +191,9 @@
 				8185BD8F20A025E100E6A360 /* ViewController.m */,
 				8159949B20A562E70043084D /* YMPayInoutViewController.h */,
 				8159949C20A562E70043084D /* YMPayInoutViewController.m */,
+				8133ADC920AD186F0063DD36 /* Base */,
+				8133ADC220AD12810063DD36 /* WKWebView 使用 */,
+				8111DD8220A98BC10032A588 /* 屏幕 fps */,
 				8159949720A52A6E0043084D /* 密码输入 */,
 				81D8D8D320A45F74004C2206 /* 解决按钮时间点击太快短时间多次响应 */,
 				81EE78AE20A1735100566322 /* UIViewExt */,
@@ -371,7 +415,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8185BDD020A0587000E6A360 /* UIScrollView+UITouch.m in Sources */,
+				8133ADCC20AD187F0063DD36 /* BaseViewController.m in Sources */,
+				8133ADC820AD12CA0063DD36 /* YMWKWebViewViewController.m in Sources */,
 				8185BDCB20A0586700E6A360 /* YMUICommonUsedTools.m in Sources */,
+				8111DD8820A98BC20032A588 /* YYFPSLabel.m in Sources */,
 				81EE78B120A1735200566322 /* UIViewExt.m in Sources */,
 				8159949D20A562E70043084D /* YMPayInoutViewController.m in Sources */,
 				8185BD9020A025E100E6A360 /* ViewController.m in Sources */,
@@ -384,6 +431,7 @@
 				8185BD9620A025E100E6A360 /* YMUICommonlyUsedTools.xcdatamodeld in Sources */,
 				81EE78A920A1423E00566322 /* YMUIConstumButton.m in Sources */,
 				815994A720A5B49D0043084D /* YMUITextField.m in Sources */,
+				8111DD8720A98BC20032A588 /* YYWeakProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

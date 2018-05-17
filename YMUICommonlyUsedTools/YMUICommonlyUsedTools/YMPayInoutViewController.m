@@ -29,7 +29,8 @@
     [self addSubViews];
 }
 #pragma mark -- 加载导航数据
-- (void)loadNavUIData {
+- (void)loadNavUIData
+{
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:self.title style:UIBarButtonItemStylePlain target:self action:nil];
 }

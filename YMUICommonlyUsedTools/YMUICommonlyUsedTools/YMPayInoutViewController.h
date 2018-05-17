@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 typedef void(^YMPayOnoutViewControllerBlock)(NSString *pwdStr);
+
 @interface YMPayInoutViewController : UIViewController
 
 /** 支付回调密码 */

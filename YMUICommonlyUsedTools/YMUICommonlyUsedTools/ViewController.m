@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "YMPayInoutViewController.h"
+#import "YMWKWebViewViewController.h"
 
 static CGFloat font = 22;
 
@@ -78,6 +79,9 @@ static CGFloat font = 22;
     [self.scrollView addSubview:self.button];
     // 自定义V按钮
     [self.scrollView addSubview:self.vButton];
+    // 添加屏幕 FPS
+    YYFPSLabel *label = [[YYFPSLabel alloc] initWithFrame:CGRectMake(MainScreenWidth - 100, 30, 100, 30)];
+    [[UIApplication sharedApplication].keyWindow addSubview:label];
 }
 #pragma mark -- 配置属性
 - (void)configProperty
@@ -109,7 +113,7 @@ static CGFloat font = 22;
     [YMUICommonUsedTools configPropertyWithView:self.button backgroundColor:[UIColor redColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
     
     // 自定义V按钮
-    self.vButton.CBTitleLabel.text = @"我是V按钮";
+    self.vButton.CBTitleLabel.text = @"加载网页";
     [YMUICommonUsedTools configPropertyWithLabel:self.vButton.CBTitleLabel font:17 textColor:[UIColor greenColor] textAlignment:NSTextAlignmentCenter numberOfLine:1];
     [YMUICommonUsedTools configPropertyWithView:self.vButton.CBImageView backgroundColor:[UIColor magentaColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
     [YMUICommonUsedTools configPropertyWithView:self.vButton backgroundColor:[UIColor redColor] cornerRadius:0.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
@@ -137,6 +141,10 @@ static CGFloat font = 22;
 {
     [self.scrollView endEditing:YES];
     NSLog(@"vButton 快速点击......");
+    YMWKWebViewViewController *webVc = [[YMWKWebViewViewController alloc] init];
+    webVc.webViewUrl = @"https://www.baidu.com";
+    webVc.webViewBarTintColor = @"ff3d3d";
+    [self.navigationController pushViewController:webVc animated:YES];
 }
 #pragma mark -- textFiledDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -149,8 +157,7 @@ static CGFloat font = 22;
 }
 
 - (void)textFieldDidChange:(UITextField *)textField
-{ // 限制输入字数
-    
+{
     CGFloat maxLength = 20;
     NSString *toBeString = textField.text;
     
@@ -262,7 +269,7 @@ static CGFloat font = 22;
     return _button;
 }
 
-- (YMUIConstumButton *)vButton
+- (YMUIConstumButton *) vButton
 {
     if (_vButton==nil) {
         _vButton = [[YMUIConstumButton alloc] initWithFrame:CGRectMake(15, self.button.frame.origin.y+self.button.frame.size.height+20, 100, 100) buttonType:YMUIConstumButtonTypeTop];
