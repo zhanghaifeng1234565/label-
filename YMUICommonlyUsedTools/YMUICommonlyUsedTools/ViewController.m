@@ -28,7 +28,7 @@ static CGFloat font = 22;
 @property (nonatomic, strong) YMUIConstumButton *button;
 /** 按钮 垂直【上下】 */
 @property (nonatomic, strong) YMUIConstumButton *vButton;
-/** 归档接档 */
+/** 归档解档 */
 @property (nonatomic, strong) YMUIConstumButton *archiverBtn;
 
 @end
@@ -174,6 +174,7 @@ static CGFloat font = 22;
         vc.encodeViewControllerBlcok = ^(NSString *title) {
             ws.archiverBtn.CBTitleLabel.text = title;
         };
+        vc.customBack = YES;
         [self.navigationController pushViewController:vc animated:YES];
     } else {
         DecodeViewController *vc = [[DecodeViewController alloc] init];
@@ -240,14 +241,14 @@ static CGFloat font = 22;
     NSDictionary *info = [notification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     CGRect rect = self.scrollView.frame;
-    rect.size.height = MainScreenHeight-kbSize.height;
+    rect.size.height = MainScreenHeight-kbSize.height-NavBarHeight;
     self.scrollView.frame = rect;
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification
 {
     CGRect rect = self.scrollView.frame;
-    rect.size.height = MainScreenHeight-NavBarHeight;
+    rect.size.height = MainScreenHeight-NavBarHeight-TabBarHeight;
     self.scrollView.frame = rect;
 }
 
@@ -259,7 +260,7 @@ static CGFloat font = 22;
 - (UIScrollView *)scrollView
 {
     if (_scrollView==nil) {
-        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, MainScreenWidth, MainScreenHeight-NavBarHeight)];
+        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, MainScreenWidth, MainScreenHeight-NavBarHeight-TabBarHeight)];
     }
     return _scrollView;
 }

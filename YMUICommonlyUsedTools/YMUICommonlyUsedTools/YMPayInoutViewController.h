@@ -10,7 +10,7 @@
 
 typedef void(^YMPayOnoutViewControllerBlock)(NSString *pwdStr);
 
-@interface YMPayInoutViewController : UIViewController
+@interface YMPayInoutViewController : BaseViewController
 
 /** 支付回调密码 */
 @property (nonatomic, copy) YMPayOnoutViewControllerBlock payOnoutViewControllerBlock;

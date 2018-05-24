@@ -14,6 +14,8 @@
 		812CAB7F20B64C65000D2518 /* EncodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 812CAB7E20B64C65000D2518 /* EncodeViewController.m */; };
 		812CAB8220B64C76000D2518 /* DecodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 812CAB8120B64C76000D2518 /* DecodeViewController.m */; };
 		812CAB9920B66773000D2518 /* YMBlackSmallAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 812CAB9820B66773000D2518 /* YMBlackSmallAlert.m */; };
+		812CAB9D20B688A0000D2518 /* YMUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 812CAB9C20B688A0000D2518 /* YMUINavigationController.m */; };
+		812CABA120B693AA000D2518 /* YMUITabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 812CABA020B693AA000D2518 /* YMUITabBarController.m */; };
 		8133ADC820AD12CA0063DD36 /* YMWKWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8133ADC720AD12CA0063DD36 /* YMWKWebViewViewController.m */; };
 		8133ADCC20AD187F0063DD36 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8133ADCB20AD187F0063DD36 /* BaseViewController.m */; };
 		8159949A20A52A9D0043084D /* YMPayInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8159949920A52A9D0043084D /* YMPayInputView.m */; };
@@ -69,6 +71,10 @@
 		812CAB8120B64C76000D2518 /* DecodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DecodeViewController.m; sourceTree = "<group>"; };
 		812CAB9720B66773000D2518 /* YMBlackSmallAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMBlackSmallAlert.h; sourceTree = "<group>"; };
 		812CAB9820B66773000D2518 /* YMBlackSmallAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMBlackSmallAlert.m; sourceTree = "<group>"; };
+		812CAB9B20B688A0000D2518 /* YMUINavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMUINavigationController.h; sourceTree = "<group>"; };
+		812CAB9C20B688A0000D2518 /* YMUINavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMUINavigationController.m; sourceTree = "<group>"; };
+		812CAB9F20B693AA000D2518 /* YMUITabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMUITabBarController.h; sourceTree = "<group>"; };
+		812CABA020B693AA000D2518 /* YMUITabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMUITabBarController.m; sourceTree = "<group>"; };
 		8133ADC620AD12CA0063DD36 /* YMWKWebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMWKWebViewViewController.h; sourceTree = "<group>"; };
 		8133ADC720AD12CA0063DD36 /* YMWKWebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMWKWebViewViewController.m; sourceTree = "<group>"; };
 		8133ADCA20AD187F0063DD36 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -181,6 +187,24 @@
 			path = "黑色小弹窗";
 			sourceTree = "<group>";
 		};
+		812CAB9A20B6887F000D2518 /* 自定义导航 */ = {
+			isa = PBXGroup;
+			children = (
+				812CAB9B20B688A0000D2518 /* YMUINavigationController.h */,
+				812CAB9C20B688A0000D2518 /* YMUINavigationController.m */,
+			);
+			path = "自定义导航";
+			sourceTree = "<group>";
+		};
+		812CAB9E20B6938B000D2518 /* 自定义标签 */ = {
+			isa = PBXGroup;
+			children = (
+				812CAB9F20B693AA000D2518 /* YMUITabBarController.h */,
+				812CABA020B693AA000D2518 /* YMUITabBarController.m */,
+			);
+			path = "自定义标签";
+			sourceTree = "<group>";
+		};
 		8133ADC220AD12810063DD36 /* WKWebView 使用 */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +261,8 @@
 				8185BD8F20A025E100E6A360 /* ViewController.m */,
 				8159949B20A562E70043084D /* YMPayInoutViewController.h */,
 				8159949C20A562E70043084D /* YMPayInoutViewController.m */,
+				812CAB9E20B6938B000D2518 /* 自定义标签 */,
+				812CAB9A20B6887F000D2518 /* 自定义导航 */,
 				812CAB9620B6672A000D2518 /* 黑色小弹窗 */,
 				8106E5DE20B58E1300F9D369 /* 归档解档 */,
 				8106E5D920B58BA600F9D369 /* 偏好设置存储 */,
@@ -468,6 +494,7 @@
 				8106E5E120B58E3600F9D369 /* YMNSKeyedArchiverStore.m in Sources */,
 				8106E5DC20B58BD300F9D369 /* YMPreferencesStore.m in Sources */,
 				812CAB9920B66773000D2518 /* YMBlackSmallAlert.m in Sources */,
+				812CAB9D20B688A0000D2518 /* YMUINavigationController.m in Sources */,
 				8133ADCC20AD187F0063DD36 /* BaseViewController.m in Sources */,
 				8133ADC820AD12CA0063DD36 /* YMWKWebViewViewController.m in Sources */,
 				8185BDCB20A0586700E6A360 /* YMUICommonUsedTools.m in Sources */,
@@ -483,6 +510,7 @@
 				81D8D8D620A45FA0004C2206 /* UIControl+ButtonClickLimit.m in Sources */,
 				8185BD9E20A025E100E6A360 /* main.m in Sources */,
 				8185BD9620A025E100E6A360 /* YMUICommonlyUsedTools.xcdatamodeld in Sources */,
+				812CABA120B693AA000D2518 /* YMUITabBarController.m in Sources */,
 				81EE78A920A1423E00566322 /* YMUIConstumButton.m in Sources */,
 				815994A720A5B49D0043084D /* YMUITextField.m in Sources */,
 				8111DD8720A98BC20032A588 /* YYWeakProxy.m in Sources */,

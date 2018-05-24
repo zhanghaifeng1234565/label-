@@ -9,7 +9,7 @@
 #import "YMNSKeyedArchiverStore.h"
 
 @implementation YMNSKeyedArchiverStore
-#pragma mark -- 归档，Key建议使用宏代替，这里就不使用了
+#pragma mark -- 归档
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.name forKey:@"name"];

@@ -7,6 +7,7 @@
 //
 
 #import "EncodeViewController.h"
+#import "ViewController.h"
 
 @interface EncodeViewController ()<UITextFieldDelegate>
 
@@ -45,6 +46,24 @@
     [self loadSubviewUI];
     // 配置属性
     [self configProperty];
+}
+
+- (BOOL)shouldPopOnBackButtonPress
+{
+    BOOL canBack = YES;
+    if(self.isCustomBack == YES){
+        // 返回到指定的控制器
+        for (UIViewController *controller in self.navigationController.viewControllers) {
+            if ([controller isKindOfClass:[ViewController class]]) {
+                ViewController *vc = (ViewController *)controller;
+                [self.navigationController popToViewController:vc animated:YES];
+            }
+        }
+        canBack = NO;
+    }else{
+        canBack = YES;
+    }
+    return canBack;
 }
 #pragma mark -- 加载视图
 - (void)loadSubviewUI
