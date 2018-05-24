@@ -19,5 +19,6 @@
 #import "YMUITextField.h"
 #import "YYFPSLabel.h"
 #import "BaseViewController.h"
+#import "YMNSKeyedArchiverStore.h"
 
 #endif /* YMUIHeader_h */

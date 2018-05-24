@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "YMPayInoutViewController.h"
 #import "YMWKWebViewViewController.h"
+#import "EncodeViewController.h"
+#import "DecodeViewController.h"
 
 static CGFloat font = 22;
 
@@ -26,6 +28,8 @@ static CGFloat font = 22;
 @property (nonatomic, strong) YMUIConstumButton *button;
 /** 按钮 垂直【上下】 */
 @property (nonatomic, strong) YMUIConstumButton *vButton;
+/** 归档接档 */
+@property (nonatomic, strong) YMUIConstumButton *archiverBtn;
 
 @end
 
@@ -79,6 +83,8 @@ static CGFloat font = 22;
     [self.scrollView addSubview:self.button];
     // 自定义V按钮
     [self.scrollView addSubview:self.vButton];
+    // 归档解档按钮
+    [self.scrollView addSubview:self.archiverBtn];
     // 添加屏幕 FPS
     YYFPSLabel *label = [[YYFPSLabel alloc] initWithFrame:CGRectMake(MainScreenWidth - 100, 30, 100, 30)];
     [[UIApplication sharedApplication].keyWindow addSubview:label];
@@ -118,6 +124,18 @@ static CGFloat font = 22;
     [YMUICommonUsedTools configPropertyWithView:self.vButton.CBImageView backgroundColor:[UIColor magentaColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
     [YMUICommonUsedTools configPropertyWithView:self.vButton backgroundColor:[UIColor redColor] cornerRadius:0.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
     [YMUICommonUsedTools configArbitraryCornerRadiusView:self.vButton cornerRadius:50.0f withType:ArbitraryCornerRadiusViewTypeTopLeftTopRight];
+    
+    // 归档按钮
+    YMNSKeyedArchiverStore *store = [YMNSKeyedArchiverStore getObjectWithPath:@"personFile.data"];
+    if (store.name) {
+        self.archiverBtn.CBTitleLabel.text = @"解档";
+    } else {
+        self.archiverBtn.CBTitleLabel.text = @"归档";
+    }
+    [YMUICommonUsedTools configPropertyWithLabel:self.archiverBtn.CBTitleLabel font:17 textColor:[UIColor greenColor] textAlignment:NSTextAlignmentCenter numberOfLine:1];
+    [YMUICommonUsedTools configPropertyWithView:self.archiverBtn.CBImageView backgroundColor:[UIColor magentaColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
+    [YMUICommonUsedTools configPropertyWithView:self.archiverBtn backgroundColor:[UIColor redColor] cornerRadius:0.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
+    [YMUICommonUsedTools configArbitraryCornerRadiusView:self.archiverBtn cornerRadius:50.0f withType:ArbitraryCornerRadiusViewTypeTopLeftTopRight];
 }
 #pragma mark -- 布局视图
 - (void)layoutSubView
@@ -145,6 +163,26 @@ static CGFloat font = 22;
     webVc.webViewUrl = @"https://www.baidu.com";
     webVc.webViewBarTintColor = @"ff3d3d";
     [self.navigationController pushViewController:webVc animated:YES];
+}
+#pragma mark -- 归档解档按钮点击调用
+- (void)archiverButtonClick:(YMUIConstumButton *)button
+{
+    __weak typeof(&*self) ws = self;
+    if ([button.CBTitleLabel.text isEqualToString:@"归档"]) {
+        EncodeViewController *vc = [[EncodeViewController alloc] init];
+        vc.title = @"归档";
+        vc.encodeViewControllerBlcok = ^(NSString *title) {
+            ws.archiverBtn.CBTitleLabel.text = title;
+        };
+        [self.navigationController pushViewController:vc animated:YES];
+    } else {
+        DecodeViewController *vc = [[DecodeViewController alloc] init];
+        vc.title = @"解档";
+        vc.decodeViewControllerBlcok = ^(NSString *title) {
+            ws.archiverBtn.CBTitleLabel.text = title;
+        };
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 #pragma mark -- textFiledDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -277,5 +315,15 @@ static CGFloat font = 22;
         [_vButton addTarget:self action:@selector(vButtonClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _vButton;
+}
+
+- (YMUIConstumButton *)archiverBtn
+{
+    if (_archiverBtn==nil) {
+        _archiverBtn = [[YMUIConstumButton alloc] initWithFrame:CGRectMake(MainScreenWidth-15-100, self.button.frame.origin.y+self.button.frame.size.height+20, 100, 100) buttonType:YMUIConstumButtonTypeTop];
+        _archiverBtn.acceptEventInterval = 1.0f;
+        [_archiverBtn addTarget:self action:@selector(archiverButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _archiverBtn;
 }
 @end
