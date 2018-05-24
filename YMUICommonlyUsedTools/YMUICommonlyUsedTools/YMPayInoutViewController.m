@@ -28,6 +28,12 @@
     // 添加视图
     [self addSubViews];
 }
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.payView endEditing:YES];
+}
 #pragma mark -- 加载导航数据
 - (void)loadNavUIData
 {

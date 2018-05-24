@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController
 
+/** 导航是否透明 */
+@property (nonatomic, assign) BOOL navClear;
 
 @end
 

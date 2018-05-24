@@ -63,6 +63,22 @@ static CGFloat font = 22;
     // 布局视图
     [self layoutSubView];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.navClear==YES) {
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    } else {
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"top_navigation_bg_6p"] forBarMetrics:UIBarMetricsDefault];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"top_navigation_bg_6p"] forBarMetrics:UIBarMetricsDefault];
+}
 #pragma mark -- 加载导航数据
 - (void)loadNavUIData
 {

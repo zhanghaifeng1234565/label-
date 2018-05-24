@@ -63,7 +63,12 @@ enum
 - (void)setUpChilderNav
 {
     YMUINavigationController *nav1 = [self setUpChildrenController:[[ViewController alloc] init] navigtionItemTitle:@"测试1" withTag:ONE];
-    YMUINavigationController *nav2 = [self setUpChildrenController:[[ViewController alloc] init] navigtionItemTitle:@"测试2" withTag:TWO];
+    
+    ViewController *vc2 = [[ViewController alloc] init];
+    vc2.navClear = YES;
+    YMUINavigationController *nav2 = [self setUpChildrenController:vc2 navigtionItemTitle:@"测试2" withTag:TWO];
+    [nav2.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    
     YMUINavigationController *nav3 = [self setUpChildrenController:[[ViewController alloc] init] navigtionItemTitle:@"测试3" withTag:THREE];
     YMUINavigationController *nav4 = [self setUpChildrenController:[[ViewController alloc] init] navigtionItemTitle:@"测试4" withTag:FOUR];
     NSArray *viewControllerArray = [[NSArray alloc] initWithObjects:nav1,nav2,nav3,nav4, nil];
