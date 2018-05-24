@@ -10,8 +10,8 @@
 
 @interface ViewController : UIViewController
 
-/** 导航是否透明 */
-@property (nonatomic, assign) BOOL navClear;
+/** 来自哪个控制器 */
+@property (nonatomic, copy) NSString *navStr;
 
 @end
 

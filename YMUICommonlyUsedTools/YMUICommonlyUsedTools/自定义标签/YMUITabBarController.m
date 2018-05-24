@@ -62,15 +62,22 @@ enum
 #pragma mark -- 创建子导航控制器
 - (void)setUpChilderNav
 {
-    YMUINavigationController *nav1 = [self setUpChildrenController:[[ViewController alloc] init] navigtionItemTitle:@"测试1" withTag:ONE];
+    ViewController *vc1 = [[ViewController alloc] init];
+    vc1.navStr = @"1";
+    YMUINavigationController *nav1 = [self setUpChildrenController:vc1 navigtionItemTitle:@"测试1" withTag:ONE];
     
     ViewController *vc2 = [[ViewController alloc] init];
-    vc2.navClear = YES;
+    vc2.navStr = @"2";
     YMUINavigationController *nav2 = [self setUpChildrenController:vc2 navigtionItemTitle:@"测试2" withTag:TWO];
-    [nav2.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+
+    ViewController *vc3 = [[ViewController alloc] init];
+    vc3.navStr = @"3";
+    YMUINavigationController *nav3 = [self setUpChildrenController:vc3 navigtionItemTitle:@"测试3" withTag:THREE];
     
-    YMUINavigationController *nav3 = [self setUpChildrenController:[[ViewController alloc] init] navigtionItemTitle:@"测试3" withTag:THREE];
-    YMUINavigationController *nav4 = [self setUpChildrenController:[[ViewController alloc] init] navigtionItemTitle:@"测试4" withTag:FOUR];
+    ViewController *vc4 = [[ViewController alloc] init];
+    vc4.navStr = @"4";
+    YMUINavigationController *nav4 = [self setUpChildrenController:vc4 navigtionItemTitle:@"测试4" withTag:FOUR];
+    
     NSArray *viewControllerArray = [[NSArray alloc] initWithObjects:nav1,nav2,nav3,nav4, nil];
     [self setViewControllers:viewControllerArray];
     self.nav1 = nav1;

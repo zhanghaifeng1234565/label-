@@ -63,22 +63,6 @@ static CGFloat font = 22;
     // 布局视图
     [self layoutSubView];
 }
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    if (self.navClear==YES) {
-        [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    } else {
-        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"top_navigation_bg_6p"] forBarMetrics:UIBarMetricsDefault];
-    }
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"top_navigation_bg_6p"] forBarMetrics:UIBarMetricsDefault];
-}
 #pragma mark -- 加载导航数据
 - (void)loadNavUIData
 {
@@ -111,13 +95,6 @@ static CGFloat font = 22;
     // 添加设置行间距的 label
     [YMUICommonUsedTools configPropertyWithLabel:self.testLabel font:font textColor:[UIColor blueColor] textAlignment:NSTextAlignmentLeft numberOfLine:0];
     [YMUICommonUsedTools configPropertyWithLabel:self.testLabel font:font lineSpace:5 maxWidth:MainScreenWidth-30];
-    CGFloat labelHeight = [YMUICommonUsedTools getHeightWithLabel:self.testLabel font:font lineSpace:5 maxWidth:MainScreenWidth-30];
-    CGFloat labelWidth = [YMUICommonUsedTools getWidthWithLabel:self.testLabel font:font];
-    
-    CGRect labelFrame = self.testLabel.frame;
-    labelFrame.size.height = labelHeight;
-    labelFrame.size.width = labelWidth>MainScreenWidth-30?MainScreenWidth-30:labelWidth;
-    self.testLabel.frame = labelFrame;
     
     [YMUICommonUsedTools configPropertyWithView:self.testLabel backgroundColor:[UIColor yellowColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor greenColor]];
     
@@ -156,6 +133,19 @@ static CGFloat font = 22;
 #pragma mark -- 布局视图
 - (void)layoutSubView
 {
+    CGFloat labelHeight = [YMUICommonUsedTools getHeightWithLabel:self.testLabel font:font lineSpace:5 maxWidth:MainScreenWidth-30];
+    CGFloat labelWidth = [YMUICommonUsedTools getWidthWithLabel:self.testLabel font:font];
+    
+    CGRect labelFrame = self.testLabel.frame;
+    labelFrame.size.height = labelHeight;
+    labelFrame.size.width = labelWidth>MainScreenWidth-30?MainScreenWidth-30:labelWidth;
+    self.testLabel.frame = labelFrame;
+    
+    self.textView.frame = CGRectMake(15, self.testLabel.frame.origin.y+self.testLabel.frame.size.height+20, MainScreenWidth-30, 100);
+    self.textFiled.frame = CGRectMake(15, self.textView.frame.origin.y+self.textView.frame.size.height+20, MainScreenWidth-30, 48);
+    self.button.frame = CGRectMake(15, self.textFiled.frame.origin.y+self.textFiled.frame.size.height+20, MainScreenWidth-30, 48);
+    self.vButton.frame = CGRectMake(15, self.button.frame.origin.y+self.button.frame.size.height+20, 100, 100);
+    self.archiverBtn.frame = CGRectMake(MainScreenWidth-15-100, self.button.frame.origin.y+self.button.frame.size.height+20, 100, 100);
     self.scrollView.contentSize = CGSizeMake(MainScreenWidth, self.vButton.frame.origin.y+self.vButton.frame.size.height+30);
 }
 #pragma mark -- button 点击事件
@@ -285,7 +275,15 @@ static CGFloat font = 22;
 {
     if (_testLabel==nil) {
         _testLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 15, MainScreenWidth-30, 17)];
-        _testLabel.text = @"费拉嘉陵江法兰克阿里客服afjssjflj";
+        if ([self.navStr isEqualToString:@"1"]) {
+            _testLabel.text = @"费拉嘉陵江法兰克阿里";
+        } else if ([self.navStr isEqualToString:@"2"]) {
+            _testLabel.text = @"费拉嘉陵江法兰克阿里客服afjssjflj费拉嘉陵江法兰克阿里客服afjssjflj费拉嘉陵江法兰克阿里客服afjssjflj费拉嘉陵江法兰克阿里客服afjssjflj";
+        } else if ([self.navStr isEqualToString:@"3"]) {
+            _testLabel.text = @"费拉嘉陵江法兰克阿里客服afjssjflj";
+        } else {
+            _testLabel.text = @"We are friend! Hello world! Begain to click code quick!";
+        }
         _testLabel.backgroundColor = [UIColor magentaColor];
     }
     return _testLabel;
