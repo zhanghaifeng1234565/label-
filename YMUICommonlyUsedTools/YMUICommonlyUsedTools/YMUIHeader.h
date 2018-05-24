@@ -20,5 +20,6 @@
 #import "YYFPSLabel.h"
 #import "BaseViewController.h"
 #import "YMNSKeyedArchiverStore.h"
+#import "YMBlackSmallAlert.h"
 
 #endif /* YMUIHeader_h */

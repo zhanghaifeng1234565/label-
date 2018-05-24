@@ -79,8 +79,7 @@
 - (void)saveBtnClick
 {
     if ([self.nameTextField.text isEqualToString:@""]) {
-        UIAlertView *alertV = [[UIAlertView alloc] initWithTitle:@"" message:@"请输入姓名" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-        [alertV show];
+        [YMBlackSmallAlert showAlertWithMessage:@"请输入姓名" time:2.0f];
         return;
     }
     
