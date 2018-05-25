@@ -9,15 +9,19 @@
 #ifndef YMUIHeader_h
 #define YMUIHeader_h
 
+#import "UIColor+Hex.h"
+#import "UIImage+Tools.h"
+#import "UIControl+ButtonClickLimit.h"
+#import "NSString+HelpeTools.h"
+#import "UIScrollView+UITouch.h"
+
 #import "YMUICommonUsedTools.h"
 #import "YMUIPlaceholderTextView.h"
-#import "UIScrollView+UITouch.h"
 #import "YMUIConstumButton.h"
 #import "UIViewExt.h"
-#import "UIColor+Hex.h"
-#import "UIControl+ButtonClickLimit.h"
 #import "YMUITextField.h"
 #import "YYFPSLabel.h"
+#import "YMRootBaeeViewController.h"
 #import "BaseViewController.h"
 #import "YMNSKeyedArchiverStore.h"
 #import "YMBlackSmallAlert.h"

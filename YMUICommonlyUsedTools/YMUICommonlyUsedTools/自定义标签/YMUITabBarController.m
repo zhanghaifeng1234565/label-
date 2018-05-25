@@ -8,6 +8,7 @@
 
 #import "YMUITabBarController.h"
 #import "ViewController.h"
+#import "YMUISearchViewController.h"
 
 enum
 { // 控制器枚举
@@ -15,6 +16,7 @@ enum
     TWO,
     THREE,
     FOUR,
+    FIVE,
 };
 @interface YMUITabBarController ()
 
@@ -78,12 +80,16 @@ enum
     vc4.navStr = @"4";
     YMUINavigationController *nav4 = [self setUpChildrenController:vc4 navigtionItemTitle:@"测试4" withTag:FOUR];
     
-    NSArray *viewControllerArray = [[NSArray alloc] initWithObjects:nav1,nav2,nav3,nav4, nil];
+    YMUISearchViewController *vc5 = [[YMUISearchViewController alloc] init];
+    YMUINavigationController *nav5 = [self setUpChildrenController:vc5 navigtionItemTitle:@"搜索" withTag:FIVE];
+    
+    NSArray *viewControllerArray = [[NSArray alloc] initWithObjects:nav1,nav2,nav3,nav4,nav5, nil];
     [self setViewControllers:viewControllerArray];
     self.nav1 = nav1;
     self.nav2 = nav2;
     self.nav3 = nav3;
     self.nav4 = nav4;
+    self.nav5 = nav5;
 }
 #pragma mark -- 创建自控制器
 - (YMUINavigationController *)setUpChildrenController:(UIViewController *)vc navigtionItemTitle:(NSString *)navigationItemTitle withTag:(NSInteger)tag
@@ -185,7 +191,7 @@ enum
 - (NSArray *)normalImageArray
 {
     if (_normalImageArray==nil) {
-        _normalImageArray = [[NSArray alloc] initWithObjects:@"",@"",@"",@"",nil];
+        _normalImageArray = [[NSArray alloc] initWithObjects:@"",@"",@"",@"",@"",nil];
     }
     return _normalImageArray;
 }
@@ -193,7 +199,7 @@ enum
 - (NSArray *)pressImageArray
 {
     if (_pressImageArray==nil) {
-        _pressImageArray = [[NSArray alloc] initWithObjects:@"",@"",@"",@"",nil];
+        _pressImageArray = [[NSArray alloc] initWithObjects:@"",@"",@"",@"",@"",nil];
     }
     return _pressImageArray;
 }
@@ -201,7 +207,7 @@ enum
 - (NSArray *)namesArray
 {
     if (_namesArray==nil) {
-        _namesArray = [[NSArray alloc] initWithObjects:@"测试1",@"测试2",@"测试3",@"测试4",nil];
+        _namesArray = [[NSArray alloc] initWithObjects:@"测试1",@"测试2",@"测试3",@"测试4",@"搜索",nil];
     }
     return _namesArray;
 }

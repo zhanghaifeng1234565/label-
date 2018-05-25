@@ -63,6 +63,18 @@ static CGFloat font = 22;
     // 布局视图
     [self layoutSubView];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    // 归档按钮
+    YMNSKeyedArchiverStore *store = [YMNSKeyedArchiverStore getObjectWithPath:@"personFile.data"];
+    if (store.name) {
+        self.archiverBtn.CBTitleLabel.text = @"解档";
+    } else {
+        self.archiverBtn.CBTitleLabel.text = @"归档";
+    }
+}
 #pragma mark -- 加载导航数据
 - (void)loadNavUIData
 {
@@ -118,13 +130,6 @@ static CGFloat font = 22;
     [YMUICommonUsedTools configPropertyWithView:self.vButton backgroundColor:[UIColor redColor] cornerRadius:0.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
     [YMUICommonUsedTools configArbitraryCornerRadiusView:self.vButton cornerRadius:50.0f withType:ArbitraryCornerRadiusViewTypeTopLeftTopRight];
     
-    // 归档按钮
-    YMNSKeyedArchiverStore *store = [YMNSKeyedArchiverStore getObjectWithPath:@"personFile.data"];
-    if (store.name) {
-        self.archiverBtn.CBTitleLabel.text = @"解档";
-    } else {
-        self.archiverBtn.CBTitleLabel.text = @"归档";
-    }
     [YMUICommonUsedTools configPropertyWithLabel:self.archiverBtn.CBTitleLabel font:17 textColor:[UIColor greenColor] textAlignment:NSTextAlignmentCenter numberOfLine:1];
     [YMUICommonUsedTools configPropertyWithView:self.archiverBtn.CBImageView backgroundColor:[UIColor magentaColor] cornerRadius:2.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];
     [YMUICommonUsedTools configPropertyWithView:self.archiverBtn backgroundColor:[UIColor redColor] cornerRadius:0.0f borderWidth:0.5f borderColor:[UIColor magentaColor]];

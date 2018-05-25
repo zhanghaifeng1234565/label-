@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8102AA4F20B79DA6007C1AE5 /* YMUISearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8102AA4E20B79DA6007C1AE5 /* YMUISearchViewController.m */; };
+		8102AA5220B79ED2007C1AE5 /* YMRootBaeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8102AA5120B79ED2007C1AE5 /* YMRootBaeeViewController.m */; };
+		8102AA5520B79F46007C1AE5 /* YMUISearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8102AA5420B79F46007C1AE5 /* YMUISearchBar.m */; };
+		8102AA5820B7AAFD007C1AE5 /* UIImage+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8102AA5720B7AAFD007C1AE5 /* UIImage+Tools.m */; };
+		8102AA5C20B7BE23007C1AE5 /* YMSegmentselectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8102AA5B20B7BE23007C1AE5 /* YMSegmentselectorViewController.m */; };
+		8102AA5F20B7D9A8007C1AE5 /* YMSegmentselectorScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8102AA5E20B7D9A8007C1AE5 /* YMSegmentselectorScrollView.m */; };
+		8102AA6320B7E2CF007C1AE5 /* NSString+HelpeTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8102AA6220B7E2CF007C1AE5 /* NSString+HelpeTools.m */; };
+		8102AA6620B7E7DF007C1AE5 /* YMConsultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8102AA6520B7E7DF007C1AE5 /* YMConsultViewController.m */; };
 		8106E5DC20B58BD300F9D369 /* YMPreferencesStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 8106E5DB20B58BD300F9D369 /* YMPreferencesStore.m */; };
 		8106E5E120B58E3600F9D369 /* YMNSKeyedArchiverStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 8106E5E020B58E3600F9D369 /* YMNSKeyedArchiverStore.m */; };
 		8111DD8720A98BC20032A588 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8111DD8320A98BC10032A588 /* YYWeakProxy.m */; };
@@ -57,6 +65,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8102AA4D20B79DA6007C1AE5 /* YMUISearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMUISearchViewController.h; sourceTree = "<group>"; };
+		8102AA4E20B79DA6007C1AE5 /* YMUISearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMUISearchViewController.m; sourceTree = "<group>"; };
+		8102AA5020B79ED2007C1AE5 /* YMRootBaeeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMRootBaeeViewController.h; sourceTree = "<group>"; };
+		8102AA5120B79ED2007C1AE5 /* YMRootBaeeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMRootBaeeViewController.m; sourceTree = "<group>"; };
+		8102AA5320B79F46007C1AE5 /* YMUISearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMUISearchBar.h; sourceTree = "<group>"; };
+		8102AA5420B79F46007C1AE5 /* YMUISearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMUISearchBar.m; sourceTree = "<group>"; };
+		8102AA5620B7AAFD007C1AE5 /* UIImage+Tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tools.h"; sourceTree = "<group>"; };
+		8102AA5720B7AAFD007C1AE5 /* UIImage+Tools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tools.m"; sourceTree = "<group>"; };
+		8102AA5A20B7BE23007C1AE5 /* YMSegmentselectorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMSegmentselectorViewController.h; sourceTree = "<group>"; };
+		8102AA5B20B7BE23007C1AE5 /* YMSegmentselectorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMSegmentselectorViewController.m; sourceTree = "<group>"; };
+		8102AA5D20B7D9A8007C1AE5 /* YMSegmentselectorScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMSegmentselectorScrollView.h; sourceTree = "<group>"; };
+		8102AA5E20B7D9A8007C1AE5 /* YMSegmentselectorScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMSegmentselectorScrollView.m; sourceTree = "<group>"; };
+		8102AA6120B7E2CF007C1AE5 /* NSString+HelpeTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+HelpeTools.h"; sourceTree = "<group>"; };
+		8102AA6220B7E2CF007C1AE5 /* NSString+HelpeTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+HelpeTools.m"; sourceTree = "<group>"; };
+		8102AA6420B7E7DF007C1AE5 /* YMConsultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMConsultViewController.h; sourceTree = "<group>"; };
+		8102AA6520B7E7DF007C1AE5 /* YMConsultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMConsultViewController.m; sourceTree = "<group>"; };
 		8106E5DA20B58BD300F9D369 /* YMPreferencesStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMPreferencesStore.h; sourceTree = "<group>"; };
 		8106E5DB20B58BD300F9D369 /* YMPreferencesStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMPreferencesStore.m; sourceTree = "<group>"; };
 		8106E5DF20B58E3600F9D369 /* YMNSKeyedArchiverStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMNSKeyedArchiverStore.h; sourceTree = "<group>"; };
@@ -145,6 +169,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8102AA4C20B79D83007C1AE5 /* 搜索 */ = {
+			isa = PBXGroup;
+			children = (
+				8102AA4D20B79DA6007C1AE5 /* YMUISearchViewController.h */,
+				8102AA4E20B79DA6007C1AE5 /* YMUISearchViewController.m */,
+				8102AA5320B79F46007C1AE5 /* YMUISearchBar.h */,
+				8102AA5420B79F46007C1AE5 /* YMUISearchBar.m */,
+			);
+			path = "搜索";
+			sourceTree = "<group>";
+		};
+		8102AA5920B7BD59007C1AE5 /* 分段控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				8102AA5A20B7BE23007C1AE5 /* YMSegmentselectorViewController.h */,
+				8102AA5B20B7BE23007C1AE5 /* YMSegmentselectorViewController.m */,
+				8102AA5D20B7D9A8007C1AE5 /* YMSegmentselectorScrollView.h */,
+				8102AA5E20B7D9A8007C1AE5 /* YMSegmentselectorScrollView.m */,
+			);
+			path = "分段控制器";
+			sourceTree = "<group>";
+		};
+		8102AA6020B7E29D007C1AE5 /* NSString 分类 */ = {
+			isa = PBXGroup;
+			children = (
+				8102AA6120B7E2CF007C1AE5 /* NSString+HelpeTools.h */,
+				8102AA6220B7E2CF007C1AE5 /* NSString+HelpeTools.m */,
+			);
+			path = "NSString 分类";
+			sourceTree = "<group>";
+		};
 		8106E5D920B58BA600F9D369 /* 偏好设置存储 */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +274,8 @@
 			children = (
 				8133ADCA20AD187F0063DD36 /* BaseViewController.h */,
 				8133ADCB20AD187F0063DD36 /* BaseViewController.m */,
+				8102AA5020B79ED2007C1AE5 /* YMRootBaeeViewController.h */,
+				8102AA5120B79ED2007C1AE5 /* YMRootBaeeViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -261,6 +318,11 @@
 				8185BD8F20A025E100E6A360 /* ViewController.m */,
 				8159949B20A562E70043084D /* YMPayInoutViewController.h */,
 				8159949C20A562E70043084D /* YMPayInoutViewController.m */,
+				8102AA6420B7E7DF007C1AE5 /* YMConsultViewController.h */,
+				8102AA6520B7E7DF007C1AE5 /* YMConsultViewController.m */,
+				8102AA6020B7E29D007C1AE5 /* NSString 分类 */,
+				8102AA5920B7BD59007C1AE5 /* 分段控制器 */,
+				8102AA4C20B79D83007C1AE5 /* 搜索 */,
 				812CAB9E20B6938B000D2518 /* 自定义标签 */,
 				812CAB9A20B6887F000D2518 /* 自定义导航 */,
 				812CAB9620B6672A000D2518 /* 黑色小弹窗 */,
@@ -343,6 +405,8 @@
 			children = (
 				81EE78AC20A1734900566322 /* UIColor+Hex.h */,
 				81EE78AB20A1734900566322 /* UIColor+Hex.m */,
+				8102AA5620B7AAFD007C1AE5 /* UIImage+Tools.h */,
+				8102AA5720B7AAFD007C1AE5 /* UIImage+Tools.m */,
 			);
 			path = Color;
 			sourceTree = "<group>";
@@ -490,6 +554,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				812CAB8220B64C76000D2518 /* DecodeViewController.m in Sources */,
+				8102AA5C20B7BE23007C1AE5 /* YMSegmentselectorViewController.m in Sources */,
+				8102AA5520B79F46007C1AE5 /* YMUISearchBar.m in Sources */,
 				8185BDD020A0587000E6A360 /* UIScrollView+UITouch.m in Sources */,
 				8106E5E120B58E3600F9D369 /* YMNSKeyedArchiverStore.m in Sources */,
 				8106E5DC20B58BD300F9D369 /* YMPreferencesStore.m in Sources */,
@@ -497,16 +563,22 @@
 				812CAB9D20B688A0000D2518 /* YMUINavigationController.m in Sources */,
 				8133ADCC20AD187F0063DD36 /* BaseViewController.m in Sources */,
 				8133ADC820AD12CA0063DD36 /* YMWKWebViewViewController.m in Sources */,
+				8102AA5220B79ED2007C1AE5 /* YMRootBaeeViewController.m in Sources */,
 				8185BDCB20A0586700E6A360 /* YMUICommonUsedTools.m in Sources */,
 				8111DD8820A98BC20032A588 /* YYFPSLabel.m in Sources */,
 				812CAB7F20B64C65000D2518 /* EncodeViewController.m in Sources */,
+				8102AA5820B7AAFD007C1AE5 /* UIImage+Tools.m in Sources */,
 				81EE78B120A1735200566322 /* UIViewExt.m in Sources */,
+				8102AA4F20B79DA6007C1AE5 /* YMUISearchViewController.m in Sources */,
 				8159949D20A562E70043084D /* YMPayInoutViewController.m in Sources */,
+				8102AA6320B7E2CF007C1AE5 /* NSString+HelpeTools.m in Sources */,
+				8102AA6620B7E7DF007C1AE5 /* YMConsultViewController.m in Sources */,
 				8185BD9020A025E100E6A360 /* ViewController.m in Sources */,
 				8185BD8D20A025E100E6A360 /* AppDelegate.m in Sources */,
 				81EE78AD20A1734A00566322 /* UIColor+Hex.m in Sources */,
 				8159949A20A52A9D0043084D /* YMPayInputView.m in Sources */,
 				8185BDCC20A0586700E6A360 /* YMUIPlaceholderTextView.m in Sources */,
+				8102AA5F20B7D9A8007C1AE5 /* YMSegmentselectorScrollView.m in Sources */,
 				81D8D8D620A45FA0004C2206 /* UIControl+ButtonClickLimit.m in Sources */,
 				8185BD9E20A025E100E6A360 /* main.m in Sources */,
 				8185BD9620A025E100E6A360 /* YMUICommonlyUsedTools.xcdatamodeld in Sources */,

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : YMRootBaeeViewController
 
 /** 来自哪个控制器 */
 @property (nonatomic, copy) NSString *navStr;

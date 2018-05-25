@@ -18,5 +18,7 @@
 @property (nonatomic, strong) YMUINavigationController *nav3;
 /** 控制器4 */
 @property (nonatomic, strong) YMUINavigationController *nav4;
+/** 控制器5 */
+@property (nonatomic, strong) YMUINavigationController *nav5;
 
 @end
