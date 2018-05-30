@@ -41,7 +41,7 @@
     [self addSubviews];
     // 配置属性
     [self configProperty];
-    // 布局
+    // 最后进行布局
     [self layoutSubviesUI];
 }
 #pragma mark -- 添加视图
@@ -57,7 +57,7 @@
 #pragma mark -- 布局
 - (void)layoutSubviesUI
 {
-    self.searchBar.frame = CGRectMake(0, 30, MainScreenWidth, 48);
+    self.searchBar.frame = CGRectMake(15, 30, MainScreenWidth-30, 48);
 }
 #pragma mark -- getter
 - (YMUISearchBar *)searchBar
@@ -65,12 +65,17 @@
     if (_searchBar==nil) {
         _searchBar = [[YMUISearchBar alloc] init];
         WS(ws);
-        _searchBar.searchTextPositionAdjustment = UIOffsetMake(10, 0);
         _searchBar.ymUISearchBarSearchBtnActionBlock = ^(NSString *text) {
             YMConsultViewController *vc = [[YMConsultViewController alloc] init];
             vc.title = text;
             [ws.navigationController pushViewController:vc animated:YES];
         };
+        _searchBar.placeholderColor = @"ff3d3d";
+        _searchBar.topMargin = 6;
+        _searchBar.leftMargin = 15;
+        _searchBar.baseBackgroundImage = [UIImage imageNamed:@"top_navigation_bg_6p"];
+        _searchBar.tfLeftView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"search_sousuo"]];
+        _searchBar.clearImage = @"login_delete_icon";
     }
     return _searchBar;
 }

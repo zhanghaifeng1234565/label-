@@ -9,10 +9,8 @@
 #import "YMUISearchBar.h"
 
 @interface YMUISearchBar ()<UITextFieldDelegate>
-
-// placeholder 和icon 和 间隙的整体宽度
+/** placeholder 和icon 和 间隙的整体宽度 */
 @property (nonatomic, assign) CGFloat placeholderWidth;
-
 @end
 
 // icon宽度
@@ -30,21 +28,65 @@ static CGFloat const placeHolderFont = 14.0;
     // 设置背景图片
     UIImage *backImage = [UIImage imageWithColor:[UIColor whiteColor]];
     [self setBackgroundImage:backImage];
+    if (self.baseBackgroundImage) {
+        [self setBackgroundImage:self.baseBackgroundImage];
+    }
+    
     for (UIView *view in [self.subviews lastObject].subviews) {
         if ([view isKindOfClass:[UITextField class]]) {
             UITextField *field = (UITextField *)view;
             // 重设field的frame
-            field.frame = CGRectMake(15.0, 7.5, self.frame.size.width-30.0, self.frame.size.height-15.0);
-            [field setBackgroundColor:[UIColor colorWithHexString:@"#eeeeee"]];
-            field.textColor = [UIColor colorWithHexString:@"#1a1a1a"];
             field.delegate = self;
             field.borderStyle = UITextBorderStyleNone;
-            field.layer.cornerRadius = 5;
+            
+            field.frame = CGRectMake(self.leftMargin, self.topMargin, self.frame.size.width-self.leftMargin*2, self.frame.size.height-2*self.topMargin);
+            
+            if (self.tfLeftView) {
+                field.leftView = self.tfLeftView;
+            }
+            
+            if (self.clearImage) {
+                UIButton *button = [field valueForKey:@"_clearButton"];
+                [button setImage:[UIImage imageNamed:self.clearImage] forState:UIControlStateNormal];
+            }
+            
             field.layer.masksToBounds = YES;
-            field.font = [UIFont systemFontOfSize:14];
+            if (self.tfCornerRadius) {
+                field.layer.cornerRadius = self.tfCornerRadius;
+            } else {
+                field.layer.cornerRadius = 4.0f;
+            }
+            
+            if (self.backgroundColor) {
+                [field setBackgroundColor:[UIColor colorWithHexString:self.backgroundColor]];
+            } else {
+                [field setBackgroundColor:[UIColor colorWithHexString:@"#eeeeee"]];
+            }
+            
+            if (self.textColor) {
+                field.textColor = [UIColor colorWithHexString:self.textColor];
+            } else {
+                field.textColor = [UIColor colorWithHexString:@"#1a1a1a"];
+            }
+            
+            if (self.textFont) {
+                field.font = [UIFont systemFontOfSize:self.textFont];
+            } else {
+                field.font = [UIFont systemFontOfSize:14];
+            }
+            
             // 设置占位文字字体颜色
-            [field setValue:[UIColor colorWithHexString:@"#a8a8a8"] forKeyPath:@"_placeholderLabel.textColor"];
-            [field setValue:[UIFont systemFontOfSize:placeHolderFont] forKeyPath:@"_placeholderLabel.font"];
+            if (self.placeholderColor) {
+                [field setValue:[UIColor colorWithHexString:self.placeholderColor] forKeyPath:@"_placeholderLabel.textColor"];
+            } else {
+                [field setValue:[UIColor colorWithHexString:@"#a8a8a8"] forKeyPath:@"_placeholderLabel.textColor"];
+            }
+            
+            if (self.placeholderFont) {
+                [field setValue:[UIFont systemFontOfSize:self.placeholderFont] forKeyPath:@"_placeholderLabel.font"];
+            } else {
+                [field setValue:[UIFont systemFontOfSize:placeHolderFont] forKeyPath:@"_placeholderLabel.font"];
+            }
             
             if (@available(iOS 11.0, *)) {
                 // 先默认居中placeholder
@@ -88,8 +130,19 @@ static CGFloat const placeHolderFont = 14.0;
 - (CGFloat)placeholderWidth
 {
     if (!_placeholderWidth) {
-        CGSize size = [self.placeholder boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:placeHolderFont]} context:nil].size;
-        _placeholderWidth = size.width + iconSpacing + searchIconW;
+        
+        CGFloat tempFont = placeHolderFont;
+        if (self.placeholderFont) {
+            tempFont = self.placeholderFont;
+        }
+        CGFloat tempMargin = iconSpacing;
+        self.searchTextPositionAdjustment = UIOffsetMake(10, 0);
+        if (self.iconSpacing) {
+            tempMargin = self.iconSpacing;
+            self.searchTextPositionAdjustment = UIOffsetMake(self.iconSpacing, 0);
+        }
+        CGSize size = [self.placeholder boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:tempFont]} context:nil].size;
+        _placeholderWidth = size.width + tempMargin + searchIconW;
     }
     return _placeholderWidth;
 }

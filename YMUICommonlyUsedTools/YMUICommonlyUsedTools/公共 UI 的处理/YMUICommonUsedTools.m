@@ -121,6 +121,11 @@
 #pragma mark -- 配置 label 的属性【行间距】【要显示的最大宽度】
 + (void)configPropertyWithLabel:(UILabel *)label font:(CGFloat)font lineSpace:(CGFloat)lineSpace maxWidth:(CGFloat)maxWidth
 {
+    // NSKernAttributeName:@1.5f 字间距
+    // NSKernAttributeName:@1.5f
+    // CGFloat textDefaultMarginHeiht = (label.font.lineHeight-label.font.pointSize); 当前字体下文本的默认间距
+    CGFloat textDefaultMarginHeiht = (label.font.lineHeight-label.font.pointSize);
+    lineSpace = lineSpace-textDefaultMarginHeiht;
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:label.text];
     CGSize size = [label.text boundingRectWithSize:CGSizeMake(maxWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil].size;
     NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
@@ -133,6 +138,10 @@
 #pragma mark -- 计算带有行间距的 label 的高度
 + (CGFloat)getHeightWithLabel:(UILabel *)label font:(CGFloat)font lineSpace:(CGFloat)lineSpace maxWidth:(CGFloat)maxWidth
 {
+    // NSKernAttributeName:@1.5f
+    // CGFloat textDefaultMarginHeiht = (label.font.lineHeight-label.font.pointSize); 当前字体下文本的默认间距
+    CGFloat textDefaultMarginHeiht = (label.font.lineHeight-label.font.pointSize);
+    lineSpace = lineSpace-textDefaultMarginHeiht;
     CGFloat labelHeight = 0.0f;
     CGSize originSize = [label.text boundingRectWithSize:CGSizeMake(maxWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil].size;
     NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];

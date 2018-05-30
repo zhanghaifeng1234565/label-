@@ -104,6 +104,11 @@ static CGFloat font = 22;
 #pragma mark -- 配置属性
 - (void)configProperty
 {
+    NSArray *array = @[@"1",@"2",@"3",@"5",@"6"];
+    [array enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"%@",obj);
+    }];
+    
     // 添加设置行间距的 label
     [YMUICommonUsedTools configPropertyWithLabel:self.testLabel font:font textColor:[UIColor blueColor] textAlignment:NSTextAlignmentLeft numberOfLine:0];
     [YMUICommonUsedTools configPropertyWithLabel:self.testLabel font:font lineSpace:5 maxWidth:MainScreenWidth-30];

@@ -14,6 +14,7 @@
 #import "UIControl+ButtonClickLimit.h"
 #import "NSString+HelpeTools.h"
 #import "UIScrollView+UITouch.h"
+#import "UIView+AdjustFrame.h"
 
 #import "YMUICommonUsedTools.h"
 #import "YMUIPlaceholderTextView.h"
