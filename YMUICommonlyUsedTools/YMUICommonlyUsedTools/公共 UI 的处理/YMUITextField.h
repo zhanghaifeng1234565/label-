@@ -12,6 +12,7 @@
 
 @protocol YMUITextFieldDelegate <NSObject>
 
+@optional
 - (void)ymTextFieldDeleteBackward:(YMUITextField *)textField;
 
 @end
