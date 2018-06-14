@@ -7,6 +7,7 @@
 //
 
 #import "YMPayInoutViewController.h"
+#import "ChartSimpleViewController.h"
 
 #import "YMPayInputView.h"
 
@@ -78,7 +79,8 @@
                     dispatch_source_cancel(_timer);
                     _timer = 0;
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.navigationController popViewControllerAnimated:YES];
+                        ChartSimpleViewController *vc = [[ChartSimpleViewController alloc] init];
+                        [self.navigationController pushViewController:vc animated:YES];
                     });
                 } else {
                     int days = (int)(timeout/(3600*24));

@@ -33,6 +33,8 @@
 		8159949A20A52A9D0043084D /* YMPayInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8159949920A52A9D0043084D /* YMPayInputView.m */; };
 		8159949D20A562E70043084D /* YMPayInoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8159949C20A562E70043084D /* YMPayInoutViewController.m */; };
 		815994A720A5B49D0043084D /* YMUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 815994A620A5B49D0043084D /* YMUITextField.m */; };
+		8173F6D120D25EF200E1F5BF /* ChartSimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8173F6D020D25EF200E1F5BF /* ChartSimpleViewController.m */; };
+		8173F6D420D25F1F00E1F5BF /* DrawLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8173F6D220D25F1E00E1F5BF /* DrawLineView.m */; };
 		8185BD8D20A025E100E6A360 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8185BD8C20A025E100E6A360 /* AppDelegate.m */; };
 		8185BD9020A025E100E6A360 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8185BD8F20A025E100E6A360 /* ViewController.m */; };
 		8185BD9320A025E100E6A360 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8185BD9120A025E100E6A360 /* Main.storyboard */; };
@@ -118,6 +120,10 @@
 		8159949C20A562E70043084D /* YMPayInoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMPayInoutViewController.m; sourceTree = "<group>"; };
 		815994A520A5B49D0043084D /* YMUITextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMUITextField.h; sourceTree = "<group>"; };
 		815994A620A5B49D0043084D /* YMUITextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMUITextField.m; sourceTree = "<group>"; };
+		8173F6CF20D25EF200E1F5BF /* ChartSimpleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChartSimpleViewController.h; sourceTree = "<group>"; };
+		8173F6D020D25EF200E1F5BF /* ChartSimpleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChartSimpleViewController.m; sourceTree = "<group>"; };
+		8173F6D220D25F1E00E1F5BF /* DrawLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineView.m; sourceTree = "<group>"; };
+		8173F6D320D25F1E00E1F5BF /* DrawLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineView.h; sourceTree = "<group>"; };
 		8185BD8820A025E100E6A360 /* YMUICommonlyUsedTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YMUICommonlyUsedTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8185BD8B20A025E100E6A360 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8185BD8C20A025E100E6A360 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -350,6 +356,17 @@
 			path = "密码输入";
 			sourceTree = "<group>";
 		};
+		8173F6CE20D25EDE00E1F5BF /* 图表动画 */ = {
+			isa = PBXGroup;
+			children = (
+				8173F6CF20D25EF200E1F5BF /* ChartSimpleViewController.h */,
+				8173F6D020D25EF200E1F5BF /* ChartSimpleViewController.m */,
+				8173F6D320D25F1E00E1F5BF /* DrawLineView.h */,
+				8173F6D220D25F1E00E1F5BF /* DrawLineView.m */,
+			);
+			path = "图表动画";
+			sourceTree = "<group>";
+		};
 		8185BD7F20A025E100E6A360 = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +398,7 @@
 				8159949C20A562E70043084D /* YMPayInoutViewController.m */,
 				8102AA6420B7E7DF007C1AE5 /* YMConsultViewController.h */,
 				8102AA6520B7E7DF007C1AE5 /* YMConsultViewController.m */,
+				8173F6CE20D25EDE00E1F5BF /* 图表动画 */,
 				810F19F520BE39D00004D0DA /* YMCategory */,
 				8102AA5920B7BD59007C1AE5 /* 分段控制器 */,
 				8102AA4C20B79D83007C1AE5 /* 搜索 */,
@@ -584,6 +602,7 @@
 			files = (
 				812CAB8220B64C76000D2518 /* DecodeViewController.m in Sources */,
 				8102AA5C20B7BE23007C1AE5 /* YMSegmentselectorViewController.m in Sources */,
+				8173F6D120D25EF200E1F5BF /* ChartSimpleViewController.m in Sources */,
 				8102AA5520B79F46007C1AE5 /* YMUISearchBar.m in Sources */,
 				8106E5E120B58E3600F9D369 /* YMNSKeyedArchiverStore.m in Sources */,
 				8106E5DC20B58BD300F9D369 /* YMPreferencesStore.m in Sources */,
@@ -599,6 +618,7 @@
 				8185BDCB20A0586700E6A360 /* YMUICommonUsedTools.m in Sources */,
 				8111DD8820A98BC20032A588 /* YYFPSLabel.m in Sources */,
 				810F1A1720BE3B620004D0DA /* UIViewExt.m in Sources */,
+				8173F6D420D25F1F00E1F5BF /* DrawLineView.m in Sources */,
 				812CAB7F20B64C65000D2518 /* EncodeViewController.m in Sources */,
 				810F1A0220BE39D00004D0DA /* UIImage+Tools.m in Sources */,
 				8102AA4F20B79DA6007C1AE5 /* YMUISearchViewController.m in Sources */,

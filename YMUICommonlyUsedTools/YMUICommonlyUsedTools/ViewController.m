@@ -271,6 +271,8 @@ static CGFloat font = 22;
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     [self.scrollView endEditing:YES];
+    NSMutableArray *arrM = [self latelyEightTime];
+    NSLog(@"%@", arrM);
 }
 #pragma mark -- getter
 - (UIScrollView *)scrollView
@@ -350,5 +352,56 @@ static CGFloat font = 22;
         [_archiverBtn addTarget:self action:@selector(archiverButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _archiverBtn;
+}
+
+//获取最近八天时间 数组
+-(NSMutableArray *)latelyEightTime {
+    NSMutableArray *eightArr = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < 8; i ++) {
+        //从现在开始的24小时
+        NSTimeInterval secondsPerDay = -i * 24*60*60;
+        NSDate *curDate = [NSDate dateWithTimeIntervalSinceNow:secondsPerDay];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"M月d日"];
+        NSString *dateStr = [dateFormatter stringFromDate:curDate];//几月几号
+        
+        NSDateFormatter *weekFormatter = [[NSDateFormatter alloc] init];
+        [weekFormatter setDateFormat:@"EEEE"];//星期几 @"HH:mm 'on' EEEE MMMM d"];
+        NSString *weekStr = [weekFormatter stringFromDate:curDate];
+        
+        //转换英文为中文
+        NSString *chinaStr = [self cTransformFromE:weekStr];
+        
+        //组合时间
+        NSString *strTime = [NSString stringWithFormat:@"%@(%@)",dateStr,chinaStr];
+        [eightArr addObject:chinaStr];
+    }
+    
+    return eightArr;
+}
+
+//转换英文为中文
+-(NSString *)cTransformFromE:(NSString *)theWeek{
+    NSString *chinaStr;
+    if(theWeek){
+        if([theWeek isEqualToString:@"Monday"]){
+            chinaStr = @"星期一";
+        }else if([theWeek isEqualToString:@"Tuesday"]){
+            chinaStr = @"星期二";
+        }else if([theWeek isEqualToString:@"Wednesday"]){
+            chinaStr = @"星期三";
+        }else if([theWeek isEqualToString:@"Thursday"]){
+            chinaStr = @"星期四";
+        }else if([theWeek isEqualToString:@"Friday"]){
+            chinaStr = @"星期五";
+        }else if([theWeek isEqualToString:@"Saturday"]){
+            chinaStr = @"星期六";
+        }else if([theWeek isEqualToString:@"Sunday"]){
+            chinaStr = @"星期日";
+        }
+    }
+    return chinaStr;
 }
 @end
